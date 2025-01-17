@@ -1,0 +1,6 @@
+name: iCore
+version: '0.1-ALPHA'
+main: com.github.itsthecatdev.iCore.ICore
+api-version: '1.21'
+authors: [ Chancy ]
+description: Core plugin for Project Island
