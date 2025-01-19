@@ -8,17 +8,17 @@ version = "0.1-ALPHA"
 
 repositories {
     mavenCentral()
-    maven("https://repo.papermc.io/repository/maven-public/") {
-        name = "papermc-repo"
-    }
-    maven("https://oss.sonatype.org/content/groups/public/") {
-        name = "sonatype"
-    }
+    maven("https://repo.papermc.io/repository/maven-public/")
+    maven("https://repo.codemc.org/repository/maven-public/")
+    maven("https://oss.sonatype.org/content/groups/public/")
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.3-R0.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    implementation("dev.jorel:commandapi-bukkit-kotlin:9.7.0")
+    implementation("dev.jorel:commandapi-bukkit-shade:9.7.0")
 }
 
 val targetJavaVersion = 21
