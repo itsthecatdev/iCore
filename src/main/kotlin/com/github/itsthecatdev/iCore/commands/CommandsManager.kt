@@ -4,5 +4,6 @@ object CommandsManager {
 
     fun loadCommands() {
         DailyRewardCommand.register()
+        ScrapGuiCommand.register()
     }
 }

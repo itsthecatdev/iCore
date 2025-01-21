@@ -11,6 +11,7 @@ repositories {
     maven("https://repo.papermc.io/repository/maven-public/")
     maven("https://repo.codemc.org/repository/maven-public/")
     maven("https://oss.sonatype.org/content/groups/public/")
+    maven("https://repo.nexomc.com/releases")
 }
 
 dependencies {
@@ -19,6 +20,7 @@ dependencies {
 
     implementation("dev.jorel:commandapi-bukkit-kotlin:9.7.0")
     implementation("dev.jorel:commandapi-bukkit-shade:9.7.0")
+    compileOnly("com.nexomc:nexo:0.7.0")
 }
 
 val targetJavaVersion = 21

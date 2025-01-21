@@ -1,6 +1,7 @@
 package com.github.itsthecatdev.iCore.gui
 
 import com.github.itsthecatdev.iCore.ICore
+import io.papermc.paper.datacomponent.item.CustomModelData
 import net.kyori.adventure.text.Component
 import org.bukkit.Material
 import org.bukkit.entity.Player
@@ -24,10 +25,11 @@ class DailyRewardGUI : InventoryGUI("Daily Reward", 27) {
                 }
             }
         } else {
-            ItemStack(Material.BARRIER).apply {
+            ItemStack(Material.PAPER).apply {
                 itemMeta = itemMeta?.apply {
                     itemName(Component.text { "You've already claimed your reward" } )
                     lore(listOf(Component.text("Come back tomorrow!")))
+                    setCustomModelData(17003)
                 }
             }
         }
