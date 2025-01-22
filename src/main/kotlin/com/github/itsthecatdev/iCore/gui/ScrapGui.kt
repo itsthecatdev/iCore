@@ -58,7 +58,7 @@ class ScrapGui : InventoryGUI("\uE104ʤ", 54)  {
     }
 
     override fun handleClick(event: InventoryClickEvent) {
-        val playerInventory = event.whoClicked.inventory
+        val playerInventory = event.whoClicked.inventory;
         if (event.rawSlot >= 38 && event.rawSlot <= 42) {
             val currentItem = event.currentItem
             if (currentItem != null && currentItem.type != Material.AIR) {
