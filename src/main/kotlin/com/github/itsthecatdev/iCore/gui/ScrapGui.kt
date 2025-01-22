@@ -60,19 +60,27 @@ class ScrapGui : InventoryGUI("\uE104ʤ", 54)  {
     override fun handleClick(event: InventoryClickEvent) {
         val playerInventory = event.whoClicked.inventory
         if (event.rawSlot >= 38 && event.rawSlot <= 42) {
-            val scrapOutPut =  ItemStack(Material.PAPER).apply {
-                itemMeta = itemMeta?.apply {
-                    itemName(Component.text("Scrap").color(NamedTextColor.WHITE) )
-                    setCustomModelData(15003)
+            val currentItem = event.currentItem
+            if (currentItem != null && currentItem.type != Material.AIR) {
+                val scrapOutPut = ItemStack(Material.PAPER).apply {
+                    itemMeta = itemMeta?.apply {
+                        displayName(Component.text("Scrap").color(NamedTextColor.WHITE))
+                        setCustomModelData(15003)
+                    }
                 }
+                setItem(24, scrapOutPut)
+                setItem(20, ItemStack(Material.AIR))
             }
-            setItem(24,scrapOutPut)
+
             event.isCancelled = true
         }
         if (event.rawSlot == 24) {
             event.isCancelled = false
         } else {
             event.isCancelled = true
+        }
+        if (event.rawSlot == 20) {
+            event.isCancelled = false
         }
         if (event.clickedInventory == playerInventory)
         {
