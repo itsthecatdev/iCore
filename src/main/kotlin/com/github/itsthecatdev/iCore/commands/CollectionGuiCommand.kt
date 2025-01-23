@@ -1,5 +1,6 @@
 package com.github.itsthecatdev.iCore.commands
 
+import com.github.itsthecatdev.iCore.gui.CollectionGui
 import com.github.itsthecatdev.iCore.gui.DailyRewardGUI
 import com.github.itsthecatdev.iCore.gui.GUIManager
 import com.github.itsthecatdev.iCore.gui.ScrapGui
@@ -10,7 +11,7 @@ object CollectionGuiCommand {
     fun register() {
         commandAPICommand("collectiongui") {
             playerExecutor { player, _ ->
-                GUIManager.openGUI(player, ScrapGui())
+                GUIManager.openGUI(player, CollectionGui())
             }
         }
     }
